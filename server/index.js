@@ -9,11 +9,9 @@ app.use(express.json());
 
 
 app.use('/router1', userRouter)
-
 app.use(express.urlencoded({ extended: true }));
 
-// MongoDB connection
-const url = 'mongodb://localhost:27017/EAD-TASKS';
+const url = 'mongodb://localhost:27020,localhost:27021,localhost:27022/EAD-TASKS?replicaSet=m101';
 mongoose.connect(url)
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.log('MongoDB connection error:', err));
@@ -22,9 +20,6 @@ mongoose.connect(url)
 app.get('/', (req, res) => {
     res.send('Welcome to the home page!');
   });
-
-
-
 
 app.listen(9000,()=>{
     console.log('Server connected...')
