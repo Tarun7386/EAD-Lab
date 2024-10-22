@@ -30,7 +30,7 @@ const Timer = () => {
   return (
     <div>
       
-      <button onClick={startTimer}>Start</button>
+      <button  disabled={isActive} onClick={startTimer}>Start</button>
       <button onClick={pauseTimer}>Pause</button>
       <button onClick={resetTimer}>Reset</button>
       <h1>{timer} seconds</h1>
