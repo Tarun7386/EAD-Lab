@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const jwt = require('jsonwebtoken');
-
+const cors = require('cors');
 const { authenticateJWT } = require("./middleware/auth");
 const PORT =4000 ;
 
 require('dotenv').config();
 app.use(express.json());
 
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Welcome to the home page!");
 });

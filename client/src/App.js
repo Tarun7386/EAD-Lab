@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import Axios from "axios";
 import PasswordStrength from "./Components/PasswordStrength";
+import Auth from "./Components/Auth";
+import Timer from "./Components/Timer";
 function App() {
   const [name, setStudentName] = useState("");
   const [tech, setTechnology] = useState("");
@@ -28,6 +30,9 @@ function App() {
         <button onClick={submitReview}><b>Submit</b></button>
       </div>
       <div><PasswordStrength/></div>
+      <div><Auth/></div>
+      <h1>Timer</h1>
+      <div><Timer/></div>
     </div>
   );
 }
